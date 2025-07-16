@@ -1,0 +1,44 @@
+@import "tailwindcss";
+
+
+body {
+  font-family: "Inter", sans-serif; /* Aplica la fuente Inter */
+
+  min-height: 100vh; /* Asegura que el cuerpo ocupe al menos el 100% de la altura de la ventana */
+  color: #ffffff; /* Color de texto blanco para contraste */
+  overflow: hidden; /* Evita barras de desplazamiento si el contenido es más pequeño que la vista */
+
+  /* Gradiente radial mejorado */
+  /* El gradiente se origina desde la esquina superior izquierda (10% 10%) */
+  /* Transiciona de un violeta oscuro (#1a0033) a un violeta más claro (#4a007c) */
+  /* Se ha añadido una tercera parada de color para una transición más suave y rica */
+  background: radial-gradient(
+    circle at 10% 10%,
+    #1a0033 0%,
+    #4a007c 50%,
+    #2c004a 100%
+  );
+}
+
+
+.content-container {
+  /* Contenedor principal para el contenido */
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.4
+  ); /* Fondo semi-transparente para el contenido */
+  padding: 2.5rem; /* Relleno generoso */
+  border-radius: 1.5rem; /* Bordes redondeados */
+  text-align: center; /* Centra el texto */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5); /* Sombra para profundidad */
+  max-width: 90%; /* Ancho máximo para responsividad */
+  width: 500px; /* Ancho fijo para pantallas más grandes */
+  backdrop-filter: blur(8px); /* Efecto de desenfoque para el fondo */
+  -webkit-backdrop-filter: blur(
+    8px
+  ); /* Compatibilidad con navegadores WebKit */
+  border: 1px solid rgba(255, 255, 255, 0.1); /* Borde sutil */
+  margin-top: 3rem; /* Margen superior para separar de la barra de navegación */
+}
