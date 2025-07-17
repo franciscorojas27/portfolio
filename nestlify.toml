@@ -1,7 +1,7 @@
 [build]
   # Comando para construir tu proyecto Astro.
   # Netlify detectará automáticamente que tienes Bun y lo usará si hay un bun.lockb/bun.lock.
-  command = "bun run build"
+  command = "bun i && bun run build"
   # Directorio donde Astro coloca los archivos construidos.
   # Esto debe coincidir con el 'outDir' configurado en tu astro.config.mjs (por defecto es 'dist').
   publish = "dist"
