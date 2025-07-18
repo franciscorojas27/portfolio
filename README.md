@@ -14,16 +14,13 @@ Este proyecto está construido con [Astro](https://astro.build/) y utiliza [Tail
 
 ## Estructura principal
 
-```
+```bash
 ├── public/
 ├── src/
 │   ├── assets/
 │   ├── components/
-│   │   ├── AboutTerminal.astro
+│   │   ├── Navigation.astro
 │   │   ├── Footer.astro
-│   │   ├── ProjectCard.astro
-│   │   ├── SkillCard.astro
-│   │   └── Terminal.astro
 │   ├── layouts/
 │   │   └── Layout.astro
 │   ├── pages/
@@ -38,29 +35,30 @@ Este proyecto está construido con [Astro](https://astro.build/) y utiliza [Tail
 ## Instalación y uso
 
 1. Clona el repositorio:
+
    ```sh
    git clone https://github.com/franciscorojas27/portfolio.git
    cd portfolio
    ```
+
 2. Instala las dependencias:
+
    ```sh
    npm install
    ```
+
 3. Inicia el servidor de desarrollo:
+
    ```sh
    npm run dev
    ```
+
 4. Abre tu navegador en `http://localhost:4321`
 
 ## Despliegue
 
 Puedes desplegar este portafolio fácilmente en plataformas como Vercel, Netlify o tu propio servidor.
 
-## Contacto
+----
 
-- Email: francisco@ejemplo.com
-- GitHub: [franciscorojas27](https://github.com/franciscorojas27)
-
----
-
-© 2024 Francisco Rojas. Hecho con 💜, ☕ y mucho PHP.
+© 2024 Francisco Rojas. Hecho con Atro.
