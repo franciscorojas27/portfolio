@@ -1,52 +1,66 @@
-# Astro Starter Kit: Basics
+# Portafolio de Francisco Rojas
 
-```sh
-bun create astro@latest -- --template basics
+¡Bienvenido a mi portafolio personal! 🚀
+
+Este proyecto está construido con [Astro](https://astro.build/) y utiliza [Tailwind CSS](https://tailwindcss.com/) para un diseño moderno, limpio y responsivo. Aquí muestro mis habilidades, proyectos destacados y formas de contacto.
+
+## Características
+
+- **Componentización total:** Todo el sitio está dividido en componentes reutilizables para fácil mantenimiento y escalabilidad.
+- **100% Tailwind CSS:** Sin clases personalizadas, solo utilidades de Tailwind para estilos rápidos y consistentes.
+- **Responsive:** Diseño adaptable a cualquier dispositivo.
+- **Animaciones y detalles visuales:** Efectos sutiles y modernos para una experiencia atractiva.
+- **Datos centralizados:** Habilidades y proyectos gestionados desde archivos de datos para fácil actualización.
+
+## Estructura principal
+
 ```
-
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
-
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
 ├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
+├── src/
+│   ├── assets/
+│   ├── components/
+│   │   ├── AboutTerminal.astro
+│   │   ├── Footer.astro
+│   │   ├── ProjectCard.astro
+│   │   ├── SkillCard.astro
+│   │   └── Terminal.astro
+│   ├── layouts/
+│   │   └── Layout.astro
+│   ├── pages/
+│   │   └── index.astro
+│   └── styles/
+│       └── global.css
+├── package.json
+├── astro.config.mjs
+└── tsconfig.json
 ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+## Instalación y uso
 
-## 🧞 Commands
+1. Clona el repositorio:
+   ```sh
+   git clone https://github.com/franciscorojas27/portfolio.git
+   cd portfolio
+   ```
+2. Instala las dependencias:
+   ```sh
+   npm install
+   ```
+3. Inicia el servidor de desarrollo:
+   ```sh
+   npm run dev
+   ```
+4. Abre tu navegador en `http://localhost:4321`
 
-All commands are run from the root of the project, from a terminal:
+## Despliegue
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `bun install`             | Installs dependencies                            |
-| `bun dev`             | Starts local dev server at `localhost:4321`      |
-| `bun build`           | Build your production site to `./dist/`          |
-| `bun preview`         | Preview your build locally, before deploying     |
-| `bun astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `bun astro -- --help` | Get help using the Astro CLI                     |
+Puedes desplegar este portafolio fácilmente en plataformas como Vercel, Netlify o tu propio servidor.
 
-## 👀 Want to learn more?
+## Contacto
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+- Email: francisco@ejemplo.com
+- GitHub: [franciscorojas27](https://github.com/franciscorojas27)
+
+---
+
+© 2024 Francisco Rojas. Hecho con 💜, ☕ y mucho PHP.
