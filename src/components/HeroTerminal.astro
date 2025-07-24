@@ -1,0 +1,78 @@
+<aside class="relative">
+      <section
+        class="bg-slate-900/80 h-110 backdrop-blur-xl rounded-2xl border border-slate-700/50 shadow-2xl overflow-hidden"
+        aria-label="Terminal interactivo"
+      >
+        <!-- Encabezado del Terminal -->
+        <header
+          class="flex items-center justify-between px-4 py-3 bg-slate-800/50 border-b border-slate-700/50"
+        >
+          <div class="flex items-center space-x-3">
+            <div class="flex space-x-1">
+              <div class="w-3 h-3 bg-red-500 rounded-full"></div>
+              <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
+              <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+            </div>
+            <span class="text-slate-400 text-sm font-mono"
+              >francisco@portfolio</span
+            >
+          </div>
+          <div class="text-slate-500 text-xs font-mono">bash</div>
+        </header>
+
+        <!-- Contenido del Terminal -->
+        <div class="p-4 font-mono text-xs space-y-1">
+          <div class="text-slate-300 animate-pulse">
+            francisco@dev:~$ whoami
+          </div>
+          <div class="text-green-400 pl-2">
+            &gt; Francisco Rojas - Desarrollador Backend de Venezuela
+          </div>
+          <div class="h-1">&nbsp;</div>
+          <div class="text-slate-300">
+            francisco@dev:~$ cat habilidades.json
+          </div>
+          <div class="text-green-400 pl-2">
+            &gt; &#123; "backend": ["PHP", "Laravel", "Node.js", "Python"]
+            &#125;
+          </div>
+          <div class="h-1">&nbsp;</div>
+          <div class="text-slate-300 animate-pulse">
+            francisco@dev:~$ docker ps
+          </div>
+          <div class="text-green-400 pl-2">&gt; CONTAINER ID IMAGE STATUS</div>
+          <div class="text-green-400 pl-2">
+            &gt; 1a2b3c4d5e6f francisco/app Up 2 hours
+          </div>
+          <div class="h-1">&nbsp;</div>
+          <div class="text-slate-300">francisco@dev:~$ php artisan serve</div>
+          <div class="text-green-400 pl-2">
+            &gt; Servidor Laravel iniciado: http://127.0.0.1:8000
+          </div>
+          <div class="h-1">&nbsp;</div>
+          <div class="text-slate-300 animate-pulse">
+            francisco@dev:~$ python --version
+          </div>
+          <div class="text-green-400 pl-2">&gt; Python 3.11.0</div>
+          <div class="h-1">&nbsp;</div>
+          <div class="text-slate-300">
+            francisco@dev:~$ bun create build-future
+          </div>
+          <div class="text-green-400 pl-2">
+            &gt; Construyendo algo increíble con bun...
+          </div>
+          <div class="h-1">&nbsp;</div>
+          <div class="flex items-center space-x-2 mt-3">
+            <span class="text-green-400">$</span>
+            <span class="text-slate-300"
+              >echo "<span id="current-code"
+                >const desarrollador = new Francisco();</span
+              >"</span
+            >
+          </div>
+          <div class="text-slate-400 pl-2" id="code-output">
+            const desarrollador = new Francisco();
+          </div>
+        </div>
+      </section>
+    </aside>

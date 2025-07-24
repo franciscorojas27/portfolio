@@ -1,0 +1,106 @@
+---
+import StackPill from "@components/StackPill.astro";
+const cantvLogo = "/cantv.webp";
+---
+
+<h3
+  class="text-2xl font-bold text-center mb-8 bg-gradient-to-r from-slate-200 to-slate-400 bg-clip-text text-transparent font-mono"
+>
+  class Experiencia {"{ }"}
+</h3>
+
+<div class="max-w-4xl mx-auto">
+  <div class="bg-slate-800/60 backdrop-blur-xl border border-slate-700/50 shadow-2xl hover:shadow-slate-500/20 transition-all duration-500 rounded-xl">
+    <div class="p-5">
+      <div class="flex flex-col md:flex-row items-start gap-4">
+        <div class="w-16 h-16 bg-white rounded-xl flex items-center justify-center border border-slate-600/30 mb-2 md:mb-0 shrink-0 overflow-hidden">
+          <img src={cantvLogo} alt="Logotipo de CANTV" class="object-contain w-12 h-12" />
+        </div>
+        <div class="flex-1 min-w-0">
+          <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-3 gap-2">
+            <div class="min-w-0">
+              <h4 class="text-lg font-bold text-white font-mono break-words whitespace-normal">
+                Compañía Anónima Nacional Teléfonos de Venezuela - CANTV
+              </h4>
+              <p class="text-base text-slate-300 font-mono">
+                Pasantía Desarrollo de Software
+              </p>
+              <div class="flex items-center gap-2 text-slate-400 text-xs mt-1">
+                <i data-lucide="map-pin" class="w-3 h-3"></i>
+                Av. Libertador, Edif. Equipos II, Urbanización Maripérez, Caracas. · Presencial
+              </div>
+              <div class="flex items-center gap-2 text-slate-400 text-xs mt-1">
+                <i data-lucide="briefcase" class="w-3 h-3"></i>
+                Jornada completa
+              </div>
+            </div>
+            <div class="text-left md:text-right flex flex-row md:flex-col gap-2 md:gap-0 items-center md:items-end">
+              <div class="flex items-center gap-2 text-slate-400 mb-1">
+                <i data-lucide="calendar" class="w-3 h-3"></i>
+                <span class="font-mono text-xs">Sept. 2024 - Nov. 2024</span>
+              </div>
+              <span class="bg-slate-600/20 text-slate-300 border border-slate-600/30 font-mono px-2 py-1 rounded text-xs">
+                3 meses
+              </span>
+            </div>
+          </div>
+          <p class="text-slate-300 mb-3 leading-relaxed text-sm">
+            Desarrollé e implementé una aplicación web completa para la gestión de órdenes de servicio, mejorando la trazabilidad, eficiencia y control operativo. Me encargué del desarrollo backend, automatización de métricas, configuración de servidores y despliegue del sistema en un entorno empresarial Linux.
+          </p>
+          <h5 class="font-bold text-slate-200 mt-4 mb-1 text-sm">Responsabilidades Técnicas</h5>
+          <ul class="list-disc list-inside text-slate-300 mb-3 text-sm space-y-1">
+            <li>
+              <b>Backend con Laravel y MySQL:</b> Implementé el flujo completo de las órdenes (creación, seguimiento, cierre e historial), incluyendo panel administrativo, gestión de usuarios y control de acceso por roles.
+            </li>
+            <li>
+              <b>Métricas y reportes automatizados:</b> Diseñé un sistema de cálculo mensual de métricas (SLI), permitiendo medir tiempos de respuesta y cumplimiento de niveles de servicio.
+            </li>
+            <li>
+              <b>Notificaciones en tiempo real:</b> Configuré alertas automáticas por correo electrónico para mantener a los usuarios informados sobre cambios en sus órdenes.
+            </li>
+            <li>
+              <b>Pruebas y control de calidad:</b> Desarrollé pruebas para asegurar el correcto funcionamiento de las funcionalidades clave y facilitar mantenimientos futuros.
+            </li>
+            <li>
+              <b>Infraestructura y despliegue:</b> Configuré desde cero los entornos de desarrollo y producción con Nginx, PHP-FPM y systemd, asegurando estabilidad, rendimiento y seguridad.
+            </li>
+            <li>
+              <b>Documentación técnica:</b> Redacté manuales para usuarios y documentación técnica para facilitar soporte, escalar el sistema y permitir futuras integraciones.
+            </li>
+          </ul>
+          <h5 class="font-bold text-slate-200 mt-4 mb-1 text-sm">Desafíos Técnicos Superados</h5>
+          <ul class="list-disc list-inside text-slate-300 mb-3 text-sm space-y-1">
+            <li>
+              <b>Compatibilidad con entorno heredado:</b> El sistema debía funcionar sobre SUSE Linux Enterprise 12 SP5, con paquetes desactualizados y repositorios limitados. Compilé manualmente muchas dependencias e hice ajustes para compatibilidad con Laravel y su stack moderno.
+            </li>
+            <li>
+              <b>Configuración desde cero del servidor:</b> Preparé un servidor de pruebas replicando la futura producción. Instalé y configuré manualmente Nginx, PHP, MySQL, puertos, servicios de correo y procesos bajo systemd, sin herramientas de automatización.
+            </li>
+            <li>
+              <b>Restricciones de red y seguridad:</b> Adapté la infraestructura a las políticas estrictas de red y permisos del entorno corporativo, incluyendo firewall, reglas de puertos y aislamiento de servicios.
+            </li>
+            <li>
+              <b>Migración controlada:</b> Aseguré una transición fluida del entorno de staging al entorno operativo, minimizando riesgos de caída o mal funcionamiento.
+            </li>
+          </ul>
+          <div class="flex flex-wrap gap-1">
+            {
+              [
+                "PHP",
+                "Laravel",
+                "MySQL",
+                "Alpine.js",
+                "Blade",
+                "Tailwind CSS",
+                "Nginx",
+                "PHP-FPM",
+                "systemd",
+                "SUSE Linux"
+              ].map((name) => <StackPill>{name}</StackPill>)
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

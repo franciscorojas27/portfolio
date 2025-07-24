@@ -1,0 +1,83 @@
+---
+import ProjectCard from "./ProjectCard.astro";
+---
+
+<section id="projects" class="mb-12 mt-12">
+  <h3
+    class="text-2xl font-bold text-center mb-8 bg-gradient-to-r from-slate-200 to-slate-400 bg-clip-text text-transparent font-mono"
+  >
+    class Proyectos {"{ }"}
+  </h3>
+
+  <div class="grid lg:grid-cols-2 xl:grid-cols-3 gap-6">
+    <!-- Proyecto 1: McpServerMongodb -->
+    <ProjectCard
+      projectUrl="https://github.com/franciscorojas27/McpServerMongodb"
+      features={[
+        "Conexión directa a MongoDB Atlas",
+        "Operaciones CRUD completas",
+        "Gestión de índices automática",
+        "Protocolo MCP estándar",
+      ]}
+      technologies={[
+        "Node.js",
+        "Express",
+        "MongoDB",
+        "MCP",
+        "TypeScript",
+        "MongoDB Atlas",
+      ]}
+      title="McpServerMongodb"
+      imageUrl="/mongoMCP.webp"
+      outStanding={true}
+      status={true}
+      description={`Servidor MCP (Model Context Protocol) que se conecta a MongoDB y expone
+      operaciones para gestionar bases de datos, colecciones, documentos,
+      índices y operaciones masivas.`}
+    />
+    <!-- Proyecto 2: Backend TinyPath -->
+    <ProjectCard
+      projectUrl="https://github.com/franciscorojas27/backend-tinypath"
+      features={[
+        "Shortlinks personalizados",
+        "Sistema de métricas avanzado",
+        "Alto rendimiento",
+        "Gestión de usuarios completa",
+      ]}
+      technologies={[
+        "Laravel",
+        "Composer",
+        "PHP8",
+        "Blade",
+      ]}
+      title="Backend TinyPath"
+      imageUrl="/tinyPath.webp"
+      outStanding={false}
+      status={true}
+      description={`Backend de TinyPath, plataforma de acortamiento de enlaces con shortlinks personalizados y métricas de acceso. Maneja alto volumen de enlaces y redirecciones con sistema de usuarios completo.`}
+    />
+    <!-- Proyecto 3: ORDENRI -->
+    <ProjectCard
+      projectUrl="https://github.com/franciscorojas27/ORDENRI"
+      features={[
+        "Gestión completa de órdenes",
+        "Cálculo de SLI automático",
+        "Autenticación personalizada",
+        "Interfaz moderna con Alpine.js",
+      ]}
+      technologies={[
+        "MySQL",
+        "PHP",
+        "Laravel",
+        "Alpine.js",
+        "Blade",
+        "Tailwind CSS",
+      ]}
+      title="Sistema Gestor de Órdenes de Servicio"
+      imageUrl="/ordenri.webp"
+      outStanding={true}
+      status={true}
+      description={`Aplicación web para la gestión optimizada de órdenes de servicio de fallas en la red inteligente de CANTV. Control completo del ciclo de vida de las OS, seguimiento y SLI (Indicadores de Servicio).`}
+    />
+  </div>
+</section>
