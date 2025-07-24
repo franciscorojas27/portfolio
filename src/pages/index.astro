@@ -1,14 +1,13 @@
 ---
-import Navigation from "@components/Navigation.astro";
-import Layout from "@layouts/Layout.astro";
 import Footer from "@components/Footer.astro";
+import Main from "@components/Main.astro";
+import Header from "@components/Header.astro";
+import Layout from "@layouts/Layout.astro";
 import "../styles/global.css";
 ---
 
 <Layout>
-  <Navigation />
-  <h1>Bienvenido a mi portfolio</h1>
-  <p>Este es el contenido de la página principal.</p>
-  <p style="font-size: 1.5rem;">Estoy aprendiendo el framework</p>
+  <Header />
+  <Main />
   <Footer />
 </Layout>

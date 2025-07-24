@@ -61,4 +61,4 @@ Puedes desplegar este portafolio fácilmente en plataformas como Vercel, Netlify
 
 ----
 
-© 2024 Francisco Rojas. Hecho con Atro.
+© 2025 Francisco Rojas. Hecho con Atro.

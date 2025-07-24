@@ -2,12 +2,26 @@
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Portfolio de Francisco Rojas: desarrollador web, proyectos, habilidades y contacto."
+    />
+    <meta name="author" content="Francisco Rojas" />
+    <meta property="og:title" content="Francisco Rojas -- Portfolio" />
+    <meta
+      property="og:description"
+      content="Descubre los proyectos y habilidades de Francisco Rojas, desarrollador web."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/og-image.png" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>Francisco Rojas -- Portfolio</title>
   </head>
-  <body>
+  <body
+    class="min-h-screen bg-gradient-to-br from-slate-900 via-gray-900 to-slate-800 text-white relative"
+  >
     <slot />
   </body>
 </html>
