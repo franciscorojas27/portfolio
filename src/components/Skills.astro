@@ -1,138 +1,91 @@
 ---
-import FragmentIcon from "@components/icons/FragmentIcon.astro";
-import DataBaseIcon from "@components/icons/DataBaseIcon.astro";
-import FrameWorkIcon from "@components/icons/FrameWorkIcon.astro";
-import BrainIcon from "@components/icons/BrainIcon.astro";
-import BrainRedIcon from "@components/icons/BrainRedIcon.astro";
-import ServerIcon from "@components/icons/ServerIcon.astro";
-import TerminalIcon from "@components/icons/TerminalIcon.astro";
-import CurlyBracesIcon from "@components/icons/CurlyBracesIcon.astro";
-import BoxIcon from "@components/icons/BoxIcon.astro";
-import ComputerIcon from "@components/icons/ComputerIcon.astro";
-import RedIcon from "@components/icons/RedIcon.astro";
-import SkillItem from "@components/SkillItem.astro";
-import SkillCard from "./SkillCard.astro";
+const svgIcons = [
+  { name: "Astro", file: "astro.svg" },
+  { name: "Bash", file: "bash.svg" },
+  { name: "Bun.js", file: "bunjs.svg" },
+  { name: "Alpine.js", file: "alpinejs.svg" },
+  { name: "ChatGPT", file: "chatgpt.svg" },
+  { name: "Claude AI", file: "claude-ai.svg" },
+  { name: "CSS3", file: "css3.svg" },
+  { name: "Docker", file: "docker.svg" },
+  { name: "Git", file: "git.svg" },
+  { name: "GitHub Copilot", file: "github-copilot.svg" },
+  { name: "GitHub Dark", file: "github-dark.svg" },
+  { name: "HTML5", file: "html5.svg" },
+  { name: "JavaScript", file: "javascript.svg" },
+  { name: "Laravel", file: "laravel.svg" },
+  { name: "Linux", file: "linux.svg" },
+  { name: "MongoDB", file: "mongodb.svg" },
+  { name: "MySQL", file: "mysql.svg" },
+  { name: "Nginx", file: "nginx.svg" },
+  { name: "Node.js", file: "nodejs.svg" },
+  { name: "Suse Linux Enterprise Server", file: "openSuse.svg" },
+  { name: "MCP", file: "mcp-model-context-protocol.svg" },
+  { name: "PHP", file: "php.svg" },
+  { name: "PostgreSQL", file: "postgresql.svg" },
+  { name: "PowerShell", file: "powershell.svg" },
+  { name: "Python", file: "python.svg" },
+  { name: "ReactJS", file: "reactjs.svg" },
+  { name: "TailwindCSS", file: "tailwindcss.svg" },
+  { name: "TypeScript", file: "typescript.svg" },
+  { name: "Ubuntu", file: "ubuntu.svg" },
+];
 ---
 
-<h3
-  class="text-2xl font-bold text-center mb-8 bg-gradient-to-r from-slate-200 to-slate-400 bg-clip-text text-transparent font-mono"
->
+<h3 class="text-2xl font-bold text-center mb-8 text-gray-200 font-mono">
   $habilidades = [
 </h3>
-
-<!-- Grid Bento -->
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-4">
-  <!-- Habilidades Backend -->
-  <SkillCard title="Backend" description="Especialización">
-    <ServerIcon slot="icon" />
-    {
-      [
-        { name: "Laravel", icon: ServerIcon },
-        { name: "Node.js", icon: TerminalIcon },
-        { name: "Docker", icon: BoxIcon },
-        { name: "APIs REST", icon: ServerIcon },
-      ].map((backend: { name: string; icon: any }) => (
-        <SkillItem>
-          <backend.icon slot="icon" />
-          {backend.name}
-        </SkillItem>
-      ))
-    }
-  </SkillCard>
-
-  <!-- Lenguajes de Programación -->
-  <SkillCard title="Lenguajes" description="Lenguajes de programación">
-    <FragmentIcon slot="icon" />
-    {
-      [
-        { name: "PHP", icon: FragmentIcon },
-        { name: "Python", icon: FragmentIcon },
-        { name: "JavaScript", icon: CurlyBracesIcon },
-        { name: "TypeScript", icon: FragmentIcon },
-      ].map((lang: { name: string; icon: any }) => (
-        <SkillItem>
-          <lang.icon slot="icon" />
-          {lang.name}
-        </SkillItem>
-      ))
-    }
-  </SkillCard>
-
-  <!-- Habilidades Frontend -->
-
-  <SkillCard title="Frontend" description="Familiarizado con:">
-    <FrameWorkIcon slot="icon" />
-    {
-      [
-        { name: "React", icon: FragmentIcon },
-        { name: "Astro", icon: FragmentIcon },
-        { name: "TailwindCSS", icon: FragmentIcon },
-        { name: "HTML/CSS", icon: FrameWorkIcon },
-        { name: "Astro", icon: FrameWorkIcon },
-      ].map((frontend: { name: string; icon: any }) => (
-        <SkillItem>
-          <frontend.icon slot="icon" />
-          {frontend.name}
-        </SkillItem>
-      ))
-    }
-  </SkillCard>
-  <!-- Bases de Datos -->
-  <SkillCard title="Bases de datos" description="Familiarizado con:">
-    <DataBaseIcon slot="icon" />
-    {
-      ["MySQL", "PostgreSQL", "MongoDB", "MongoDB Atlas"].map((db) => (
-        <SkillItem>
-          <DataBaseIcon slot="icon" />
-          {db}
-        </SkillItem>
-      ))
-    }
-  </SkillCard>
-  <!-- Herramientas de IA -->
-  <SkillCard title="Herramientas de IA" description="Herramientas de IA">
-    <RedIcon slot="icon" />
-    {
-      [
-        {
-          name: "ChatGPT",
-          icon: BrainIcon,
-          description: "Asistente de IA",
-        },
-        {
-          name: "Claude",
-          icon: BrainIcon,
-          description: "Desarrollo con IA",
-        },
-        {
-          name: "GitHub Copilot",
-          icon: BrainIcon,
-          description: "Asistente de código",
-        },
-        {
-          name: "MCP",
-          icon: BrainRedIcon,
-          description: "Model Context Protocol",
-        },
-      ].map((tool) => (
-        <SkillItem>
-          <tool.icon slot="icon" />
-          <div class="flex flex-col">
-            <span class="font-medium text-slate-200 font-mono text-xs">
-              {tool.name}
-            </span>
-            <span class="text-xs text-slate-400">{tool.description}</span>
-          </div>
-        </SkillItem>
-      ))
-    }
-  </SkillCard>
-</div>
-
-<div class="text-center mt-8">
-  <span
-    class="text-2xl font-bold bg-gradient-to-r from-slate-200 to-slate-400 bg-clip-text text-transparent font-mono"
+<div
+  class="flex flex-col bg-[#181a1b] border border-[#444] rounded-lg shadow-md overflow-hidden max-w-6xl mx-auto"
+>
+  <div
+    class="flex items-center justify-between px-3 py-1 bg-[#23272a] border-b border-[#23272a]"
   >
-    ];
-  </span>
+    <span class="flex gap-1">
+      <span
+        class="w-2 h-2 rounded-full bg-[#ff5f56] border border-[#e0443e] shadow-inner"
+      ></span>
+      <span
+        class="w-2 h-2 rounded-full bg-[#ffbd2e] border border-[#dea123] shadow-inner"
+      ></span>
+      <span
+        class="w-2 h-2 rounded-full bg-[#27c93f] border border-[#13a10e] shadow-inner"
+      ></span>
+    </span>
+    <span class="text-xs font-mono text-gray-200 tracking-wide">
+      Terminal de habilidades
+    </span>
+  </div>
+  <div class="p-8">
+    <div
+      class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-6"
+    >
+      {
+        [...svgIcons]
+          .sort((a, b) => a.name.localeCompare(b.name))
+          .map((icon) => {
+            const whiteIcons = ["GitHub Dark", "GitHub Copilot", "Nginx"];
+            const isWhite = whiteIcons.includes(icon.name);
+            return (
+              <div class="flex flex-col items-center transition-all duration-200 hover:-translate-y-1 hover:bg-[#23272a] rounded-md group p-2">
+                <img
+                  src={"../src/assets/svg/" + icon.file}
+                  alt={icon.name}
+                  class={
+                    "w-12 h-12 transition-all duration-300 group-hover:scale-110" +
+                    (isWhite ? " filter brightness-0 invert" : "")
+                  }
+                />
+                <span class="mt-2 text-xs font-mono text-gray-300 text-center group-hover:text-white transition-colors duration-200">
+                  {icon.name}
+                </span>
+              </div>
+            );
+          })
+      }
+    </div>
+  </div>
+</div>
+<div class="text-center mt-8">
+  <span class="text-2xl font-bold text-gray-200 font-mono"> ]; </span>
 </div>
