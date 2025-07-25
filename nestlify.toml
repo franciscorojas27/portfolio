@@ -1,39 +1,13 @@
 [build]
-  # Comando para construir tu proyecto Astro.
-  # Netlify detectará automáticamente que tienes Bun y lo usará si hay un bun.lockb/bun.lock.
   command = "bun i && bun run build"
-  # Directorio donde Astro coloca los archivos construidos.
-  # Esto debe coincidir con el 'outDir' configurado en tu astro.config.mjs (por defecto es 'dist').
   publish = "dist"
 
-# Opcional: Si necesitas especificar una versión particular de Node.js
-# Netlify puede usar Bun como runtime, pero a veces la base de Node.js es relevante.
 [build.environment]
-  # Puedes cambiar esto a la versión de Node.js que prefieras si tienes problemas.
-  # Por ejemplo, "18" o "20". Netlify seleccionará la versión de Bun compatible.
-  NODE_VERSION = "20" 
-
-# Opcional: Redirecciones, si tu proyecto las necesita
-# Por ejemplo, para rutas dinámicas o un spa fallback
-# [[redirects]]
-#   from = "/blog/*"
-#   to = "/blog/index.html"
-#   status = 200
-
-# [[redirects]]
-#   from = "/*"
-#   to = "/index.html"
-#   status = 200 # Para Single Page Applications (SPAs)
+  NODE_VERSION = "20"
 
 [[headers]]
   for = "/*"
   [headers.values]
-    Content-Security-Policy = '''
-      default-src 'self';
-      script-src 'self';
-      object-src 'none';
-      frame-ancestors 'none';
-      require-trusted-types-for 'script'
-    '''
+    Content-Security-Policy = "default-src 'self'; script-src 'self'; object-src 'none'; frame-ancestors 'none'; require-trusted-types-for 'script';"
     Cross-Origin-Opener-Policy = "same-origin"
     X-Frame-Options = "DENY"
