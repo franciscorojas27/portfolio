@@ -86,7 +86,7 @@ export const POST: APIRoute = async ({ request, clientAddress }) => {
   try {
     await transporter.sendMail({
       from: `"${name}" <${email}>`,
-      to: getSecret("EMAIL_API"),
+      to: ["franciscoantonior30@gmail.com"],
       subject: "Nuevo mensaje desde formulario",
       html: `
         <p><strong>Nombre:</strong> ${name}</p>
