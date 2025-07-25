@@ -1,5 +1,5 @@
 [build]
-  command = "bun i && bun run build && bun run copy && bun vitest"
+    command = "bun i && bun run build && bun run copy && bun vitest run"
   publish = "dist"
 
 [build.environment]
