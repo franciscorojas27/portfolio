@@ -3,10 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Portfolio de Francisco Rojas: desarrollador web, proyectos, habilidades y contacto." />
+    <meta
+      name="description"
+      content="Portfolio de Francisco Rojas: desarrollador web, proyectos, habilidades y contacto."
+    />
     <meta name="author" content="Francisco Rojas" />
     <meta property="og:title" content="Francisco Rojas -- Portfolio" />
-    <meta property="og:description" content="Descubre los proyectos y habilidades de Francisco Rojas, desarrollador web." />
+    <meta
+      property="og:description"
+      content="Descubre los proyectos y habilidades de Francisco Rojas, desarrollador web."
+    />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="/og-image.png" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -17,9 +23,22 @@
     class="min-h-screen bg-gradient-to-br from-slate-900 via-gray-900 to-slate-800 text-white relative"
   >
     <slot />
-    <div id="project-img-modal" class="hidden fixed inset-0 z-50 bg-slate-900/95 flex items-center justify-center" onclick="window.hideProjectImgModal && window.hideProjectImgModal(event)">
-      <button id="close-project-img-modal" class="absolute top-6 right-6 z-60 bg-slate-800/80 text-white border-none rounded-full px-4 py-2 text-2xl cursor-pointer">✕</button>
-      <img id="project-img-modal-img" src="" alt="" class="max-w-[90vw] max-h-[80vh] rounded-2xl shadow-2xl" />
+    <div
+      id="project-img-modal"
+      class="hidden fixed inset-0 z-50 bg-slate-900/95  items-center justify-center"
+      onclick="window.hideProjectImgModal && window.hideProjectImgModal(event)"
+    >
+      <button
+        id="close-project-img-modal"
+        class="absolute top-6 right-6 z-60 bg-slate-800/80 text-white border-none rounded-full px-4 py-2 text-2xl cursor-pointer"
+        >✕</button
+      >
+      <img
+        id="project-img-modal-img"
+        src=""
+        alt=""
+        class="max-w-[90vw] max-h-[80vh] rounded-2xl shadow-2xl"
+      />
     </div>
     <script src="../assets/ProjectCardModal.ts"></script>
   </body>

@@ -26,6 +26,7 @@
 
     // Show modal and set image
     modal.classList.remove("hidden");
+    modal.classList.add('flex')
     img.src = src;
     img.alt = alt;
     document.body.style.overflow = "hidden";
@@ -83,6 +84,7 @@
       const img = document.getElementById("project-img-modal-img") as HTMLImageElement | null;
       if (!modal || !img) return;
       modal.classList.add("hidden");
+      modal.classList.remove("flex")
       document.body.style.overflow = "";
       resetImgTransform(img);
     }

@@ -1,6 +1,12 @@
 ---
-import HeroTerminal from "./HeroTerminal.astro";
-import { EMAIL, LINKEDIN_LINK, GITHUB_LINK } from "astro:env/client";
+import HeroTerminal from "@components/HeroTerminal.astro";
+import GithubIcon from "@components/icons/GithubIcon.astro";
+import StackPill from "@components/StackPill.astro";
+import DownloadIcon from "@components/icons/DownloadIcon.astro";
+import EmailIcon from "@components/icons/EmailIcon.astro";
+import MapIcon from "@components/icons/MapIcon.astro";
+import LinkedinIcon from "@components/icons/LinkedinIcon.astro";
+import { EMAIL, LINKEDIN_LINK, GITHUB_LINK, DRIVE_CV } from "astro:env/client";
 ---
 
 <div class="grid lg:grid-cols-2 gap-4 items-center">
@@ -25,7 +31,13 @@ import { EMAIL, LINKEDIN_LINK, GITHUB_LINK } from "astro:env/client";
           <div
             class="w-16 h-16 bg-gradient-to-br from-slate-600/20 to-slate-500/20 rounded-lg flex items-center justify-center border border-slate-600/30"
           >
-            <span class="text-2xl">👨‍💻</span>
+            <span class="text-2xl">
+              <img
+                src="/profile.webp"
+                alt="Francisco Rojas"
+                class="w-full h-full rounded-lg object-cover"
+              />
+            </span>
           </div>
         </div>
 
@@ -39,23 +51,7 @@ import { EMAIL, LINKEDIN_LINK, GITHUB_LINK } from "astro:env/client";
               <div
                 class="flex items-center gap-1 bg-slate-700/50 px-2 py-1 rounded-full"
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="18"
-                  height="18"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="lucide lucide-map-pin w-3 h-3"
-                >
-                  <path
-                    d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"
-                  ></path>
-                  <circle cx="12" cy="10" r="3"></circle>
-                </svg>
+                <MapIcon />
                 <span class="text-xs font-medium">Venezuela</span>
               </div>
             </li>
@@ -85,30 +81,11 @@ import { EMAIL, LINKEDIN_LINK, GITHUB_LINK } from "astro:env/client";
             profesionalmente y entregar soluciones de calidad.
           </p>
           <ul class="flex flex-wrap gap-1">
-            <li>
-              <span
-                class="bg-slate-600/20 text-slate-300 border border-slate-600/30 font-mono px-2 py-1 rounded text-xs"
-                >PHP</span
-              >
-            </li>
-            <li>
-              <span
-                class="bg-slate-600/20 text-slate-300 border border-slate-600/30 font-mono px-2 py-1 rounded text-xs"
-                >Laravel</span
-              >
-            </li>
-            <li>
-              <span
-                class="bg-slate-600/20 text-slate-300 border border-slate-600/30 font-mono px-2 py-1 rounded text-xs"
-                >Node.js</span
-              >
-            </li>
-            <li>
-              <span
-                class="bg-slate-600/20 text-slate-300 border border-slate-600/30 font-mono px-2 py-1 rounded text-xs"
-                >Python</span
-              >
-            </li>
+            {
+              ["PHP", "Laravel", "Node.js", "Python"].map((stack) => (
+                <StackPill>{stack}</StackPill>
+              ))
+            }
           </ul>
         </div>
       </div>
@@ -146,27 +123,13 @@ import { EMAIL, LINKEDIN_LINK, GITHUB_LINK } from "astro:env/client";
         <ul class="flex flex-row items-center space-x-3">
           <li>
             <a
-              href="https://www.linkedin.com/in/franciscorojas27-110451309/"
+              href={LINKEDIN_LINK}
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn de Francisco Rojas"
               class="text-white hover:text-slate-300 transition-colors p-1"
             >
-              <svg
-                height="40"
-                style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;"
-                version="1.1"
-                viewBox="0 0 512 512"
-                width="40"
-                xml:space="preserve"
-                aria-label="GitHub de Francisco Rojas"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="white"
-              >
-                <path
-                  d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-288.985,423.278l0,-225.717l-75.04,0l0,225.717l75.04,0Zm270.539,0l0,-129.439c0,-69.333 -37.018,-101.586 -86.381,-101.586c-39.804,0 -57.634,21.891 -67.617,37.266l0,-31.958l-75.021,0c0.995,21.181 0,225.717 0,225.717l75.02,0l0,-126.056c0,-6.748 0.486,-13.492 2.474,-18.315c5.414,-13.475 17.767,-27.434 38.494,-27.434c27.135,0 38.007,20.707 38.007,51.037l0,120.768l75.024,0Zm-307.552,-334.556c-25.674,0 -42.448,16.879 -42.448,39.002c0,21.658 16.264,39.002 41.455,39.002l0.484,0c26.165,0 42.452,-17.344 42.452,-39.002c-0.485,-22.092 -16.241,-38.954 -41.943,-39.002Z"
-                ></path>
-              </svg>
+              <LinkedinIcon />
             </a>
           </li>
           <li>
@@ -177,24 +140,7 @@ import { EMAIL, LINKEDIN_LINK, GITHUB_LINK } from "astro:env/client";
               rel="noopener noreferrer"
               class="text-white hover:text-slate-300 transition-colors p-1"
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 512 512"
-                width="40"
-                height="40"
-                fill="white"
-                class="inline-block align-middle"
-              >
-                <path
-                  d="M256,32C132.3,32,32,134.8,32,261.7c0,101.5,64.2,187.5,153.2,217.9c11.2,2.1,15.3-5,15.3-11.1
-                c0-5.5-0.2-19.9-0.3-39.1c-62.3,13.9-75.5-30.8-75.5-30.8c-10.2-26.5-24.9-33.6-24.9-33.6c-20.3-14.3,1.5-14,1.5-14
-                c22.5,1.6,34.3,23.7,34.3,23.7c20,35.1,52.4,25,65.2,19.1c2-14.8,7.8-25,14.2-30.7c-49.7-5.8-102-25.5-102-113.5
-                c0-25.1,8.7-45.6,23-61.6c-2.3-5.8-10-29.2,2.2-60.8c0,0,18.8-6.2,61.6,23.5c17.9-5.1,37-7.6,56.1-7.7c19,0.1,38.2,2.6,56.1,7.7
-                c42.8-29.7,61.5-23.5,61.5-23.5c12.2,31.6,4.5,55,2.2,60.8c14.3,16.1,23,36.6,23,61.6c0,88.2-52.4,107.6-102.3,113.3
-                c8,7.1,15.2,21.1,15.2,42.5c0,30.7-0.3,55.5-0.3,63c0,6.1,4,13.3,15.4,11C415.9,449.1,480,363.1,480,261.7
-                C480,134.8,379.7,32,256,32z"
-                ></path>
-              </svg>
+              <GithubIcon />
             </a>
           </li>
         </ul>
@@ -202,41 +148,22 @@ import { EMAIL, LINKEDIN_LINK, GITHUB_LINK } from "astro:env/client";
 
       <!-- Botones de Acción -->
       <div class="flex space-x-2">
-        <button
+        <a
+          href={DRIVE_CV}
           class="flex-1 gap-1 bg-gradient-to-r from-slate-600 to-slate-700 hover:from-slate-700 hover:to-slate-800 border-0 font-mono px-2 py-1 rounded-md text-white transition-all duration-200 flex items-center justify-center text-xs"
           type="button"
           aria-label="Descargar CV"
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 960 960"
-            fill="#e3e3e3"
-            aria-hidden="true"
-          >
-            <path
-              d="M480 640 280 440l56-58 104 104V160h80v326l104-104 56 58-200 200ZM240 800q-33 0-56.5-23.5T160 720V600h80v120h480V600h80v120q0 33-23.5 56.5T720 800H240Z"
-            ></path>
-          </svg>
+          <DownloadIcon />
           Descargar CV
-        </button>
+        </a>
         <a
           href={`mailto:${EMAIL}`}
+          target="_blank"
           class="flex-1 border border-slate-600/50 hover:border-slate-500 hover:bg-slate-700/10 text-white font-mono bg-transparent px-2 py-1 rounded-md transition-all duration-200 flex items-center justify-center text-xs"
           aria-label="Contactar"
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            height="24px"
-            viewBox="0 -960 960 960"
-            width="24px"
-            fill="#e3e3e3"
-          >
-            <path
-              d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm320-280L160-640v400h640v-400L480-440Zm0-80 320-200H160l320 200ZM160-640v-80 480-400Z"
-            ></path>
-          </svg>
+          <EmailIcon />
           <span class="ml-1">Contactar</span>
         </a>
       </div>

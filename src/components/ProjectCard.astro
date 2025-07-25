@@ -3,7 +3,6 @@ import StartIcon from "./icons/StartIcon.astro";
 import OutIcon from "./icons/OutIcon.astro";
 import StackPill from "./StackPill.astro";
 import ProjectFeatureList from "./ProjectFeatureList.astro";
-import type { b } from "node_modules/tailwindcss/dist/types-B254mqw1.d.mts";
 
 interface Props {
   title: string;
@@ -41,7 +40,10 @@ const {
       </header>
     )
   }
-  <figure class="relative overflow-hidden w-full aspect-video bg-slate-700 cursor-zoom-in" id="project-img-figure">
+  <figure
+    class="relative overflow-hidden w-full aspect-video bg-slate-700 cursor-zoom-in"
+    id="project-img-figure"
+  >
     <img
       src={imageUrl}
       alt={title}
@@ -52,7 +54,9 @@ const {
   </figure>
   <section class="flex-1 flex flex-col p-4 min-h-0">
     <header class="flex items-start gap-2 mb-2">
-      <h4 class="text-white font-mono text-base flex-1 min-w-0 break-words">{title}</h4>
+      <h4 class="text-white font-mono text-base flex-1 min-w-0 break-words">
+        {title}
+      </h4>
       <span
         class="border border-slate-600 text-slate-300 font-mono bg-slate-700/20 text-xs px-2 py-1 rounded-xl whitespace-nowrap"
         >Servidor MCP</span

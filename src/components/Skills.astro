@@ -19,7 +19,7 @@ const svgIcons = [
   { name: "MySQL", file: "mysql.svg" },
   { name: "Nginx", file: "nginx.svg" },
   { name: "Node.js", file: "nodejs.svg" },
-  { name: "Suse Linux Enterprise Server", file: "openSuse.svg" },
+  { name: "Suse Linux Enterprise Server", file: "suse.svg" },
   { name: "MCP", file: "mcp-model-context-protocol.svg" },
   { name: "PHP", file: "php.svg" },
   { name: "PostgreSQL", file: "postgresql.svg" },
@@ -69,8 +69,9 @@ const svgIcons = [
             return (
               <div class="flex flex-col items-center transition-all duration-200 hover:-translate-y-1 hover:bg-[#23272a] rounded-md group p-2">
                 <img
-                  src={"../src/assets/svg/" + icon.file}
+                  src={"/svg/" + icon.file}
                   alt={icon.name}
+                  loading="lazy"
                   class={
                     "w-12 h-12 transition-all duration-300 group-hover:scale-110" +
                     (isWhite ? " filter brightness-0 invert" : "")

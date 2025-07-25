@@ -143,7 +143,8 @@ import { EMAIL, LINKEDIN_LINK, GITHUB_LINK } from "astro:env/client";
       <p class="text-slate-400 text-base mb-4">
         Te responderé lo antes posible
       </p>
-      <form class="space-y-3">
+
+      <form method="POST" action="/api/contact" class="space-y-3">
         <div>
           <label
             for="name"
@@ -153,9 +154,11 @@ import { EMAIL, LINKEDIN_LINK, GITHUB_LINK } from "astro:env/client";
           </label>
           <input
             type="text"
+            name="name"
             id="name"
             class="w-full px-3 py-2 bg-slate-700/50 border border-slate-600/50 rounded-lg focus:outline-none focus:ring-2 focus:ring-slate-500 focus:border-transparent transition-all duration-200 text-white placeholder-slate-400 text-sm"
             placeholder="Tu nombre"
+            required
           />
         </div>
         <div>
@@ -166,10 +169,12 @@ import { EMAIL, LINKEDIN_LINK, GITHUB_LINK } from "astro:env/client";
             email:
           </label>
           <input
+            name="email"
             type="email"
             id="email"
             class="w-full px-3 py-2 bg-slate-700/50 border border-slate-600/50 rounded-lg focus:outline-none focus:ring-2 focus:ring-slate-500 focus:border-transparent transition-all duration-200 text-white placeholder-slate-400 text-sm"
             placeholder="tu@email.com"
+            required
           />
         </div>
         <div>
@@ -182,8 +187,10 @@ import { EMAIL, LINKEDIN_LINK, GITHUB_LINK } from "astro:env/client";
           <textarea
             id="message"
             rows="4"
+            name="message"
             class="w-full px-3 py-2 bg-slate-700/50 border border-slate-600/50 rounded-lg focus:outline-none focus:ring-2 focus:ring-slate-500 focus:border-transparent transition-all duration-200 text-white placeholder-slate-400 resize-none text-sm"
-            placeholder="Cuéntame sobre tu proyecto..."></textarea>
+            placeholder="Cuéntame sobre tu proyecto..."
+            required></textarea>
         </div>
         <button
           type="submit"
@@ -195,3 +202,33 @@ import { EMAIL, LINKEDIN_LINK, GITHUB_LINK } from "astro:env/client";
     </div>
   </div>
 </div>
+<script>
+  window.addEventListener("DOMContentLoaded", () => {
+    const params = new URLSearchParams(window.location.search);
+    const container = document.createElement("div");
+    container.style.marginTop = "1rem";
+
+    if (params.get("success")) {
+      container.textContent = "✅ Mensaje enviado correctamente";
+      container.style.color = "green";
+    } else if (params.get("error") === "ratelimit") {
+      container.textContent =
+        "🚫 Estás enviando muy seguido. Espera un momento.";
+      container.style.color = "orange";
+    } else if (params.get("error") === "zod") {
+      container.textContent =
+        "⚠️ Revisa los campos, hay errores de validación.";
+      container.style.color = "red";
+    } else if (params.get("error")) {
+      container.textContent = "❌ Hubo un error al enviar tu mensaje.";
+      container.style.color = "red";
+    }
+
+    if (container.textContent) {
+      const form = document.querySelector("form");
+      if (form) {
+        form.after(container);
+      }
+    }
+  });
+</script>
