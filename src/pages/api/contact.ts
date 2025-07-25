@@ -24,7 +24,7 @@ const rateLimitMap = new Map<
 const transporter = nodemailer.createTransport({
   service: "gmail",
   auth: {
-    user: EMAIL,
+    user: getSecret("EMAIL_API"),
     pass: getSecret("GMAIL_PASS"),
   },
 });
